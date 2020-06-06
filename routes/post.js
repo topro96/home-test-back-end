@@ -5,4 +5,6 @@ router.route("/posts").get(postController.getPosts);
 
 router.route("/").post(postController.addPosts);
 
+router.route("/count").get(postController.count);
+
 module.exports = router;
