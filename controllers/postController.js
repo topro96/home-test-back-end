@@ -3,7 +3,7 @@ const Post = require("../models/post");
 // Defining all methods and business logic for routes
 module.exports = {
   getPosts: function (req, res) {
-    Post.find()
+    Post.find().sort( req.query.sort).find()
       .skip(parseInt(req.query.skip))
       .limit(parseInt(req.query.limit))
       .then((posts) => res.json(posts))
